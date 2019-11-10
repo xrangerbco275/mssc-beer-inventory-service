@@ -36,9 +36,11 @@ import java.util.UUID;
 @Getter
 @NoArgsConstructor
 @MappedSuperclass
-public class BaseEntity {
+public class BaseEntity
+{
 
-    public BaseEntity(UUID id, Long version, Timestamp createdDate, Timestamp lastModifiedDate) {
+    public BaseEntity(UUID id, Long version, Timestamp createdDate, Timestamp lastModifiedDate)
+    {
         this.id = id;
         this.version = version;
         this.createdDate = createdDate;
@@ -51,8 +53,8 @@ public class BaseEntity {
             name = "UUID",
             strategy = "org.hibernate.id.UUIDGenerator"
     )
-    @Type(type="org.hibernate.type.UUIDCharType")
-    @Column(length = 36, columnDefinition = "varchar(36)", updatable = false, nullable = false )
+    @Type(type = "org.hibernate.type.UUIDCharType")
+    @Column(length = 36, columnDefinition = "varchar(36)", updatable = false, nullable = false)
     private UUID id;
 
     @Version
@@ -65,7 +67,8 @@ public class BaseEntity {
     @UpdateTimestamp
     private Timestamp lastModifiedDate;
 
-    public boolean isNew() {
+    public boolean isNew()
+    {
         return this.id == null;
     }
 }

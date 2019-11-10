@@ -15,12 +15,14 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @RequiredArgsConstructor
 @Component
-public class NewInventoryListener {
+public class NewInventoryListener
+{
 
     private final BeerInventoryRepository beerInventoryRepository;
 
     @JmsListener(destination = JmsConfig.NEW_INVENTORY_QUEUE)
-    public void listen(NewInventoryEvent event){
+    public void listen(NewInventoryEvent event)
+    {
 
         log.debug("Got Inventory: " + event.toString());
 
