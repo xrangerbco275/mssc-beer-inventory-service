@@ -16,6 +16,7 @@ public class JmsConfig
 
     public static final String NEW_INVENTORY_QUEUE = "new-inventory";
 
+
     @Bean // Serialize message content to json using TextMessage
     public MessageConverter jacksonJmsMessageConverter(ObjectMapper objectMapper)
     {
